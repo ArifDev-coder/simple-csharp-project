@@ -1,0 +1,14 @@
+/home/ArifDev/DevDir/Project/TebakAngka/bin/Debug/net10.0/TebakAngka
+/home/ArifDev/DevDir/Project/TebakAngka/bin/Debug/net10.0/TebakAngka.deps.json
+/home/ArifDev/DevDir/Project/TebakAngka/bin/Debug/net10.0/TebakAngka.runtimeconfig.json
+/home/ArifDev/DevDir/Project/TebakAngka/bin/Debug/net10.0/TebakAngka.dll
+/home/ArifDev/DevDir/Project/TebakAngka/bin/Debug/net10.0/TebakAngka.pdb
+/home/ArifDev/DevDir/Project/TebakAngka/obj/Debug/net10.0/TebakAngka.GeneratedMSBuildEditorConfig.editorconfig
+/home/ArifDev/DevDir/Project/TebakAngka/obj/Debug/net10.0/TebakAngka.AssemblyInfoInputs.cache
+/home/ArifDev/DevDir/Project/TebakAngka/obj/Debug/net10.0/TebakAngka.AssemblyInfo.cs
+/home/ArifDev/DevDir/Project/TebakAngka/obj/Debug/net10.0/TebakAngka.csproj.CoreCompileInputs.cache
+/home/ArifDev/DevDir/Project/TebakAngka/obj/Debug/net10.0/TebakAngka.dll
+/home/ArifDev/DevDir/Project/TebakAngka/obj/Debug/net10.0/refint/TebakAngka.dll
+/home/ArifDev/DevDir/Project/TebakAngka/obj/Debug/net10.0/TebakAngka.pdb
+/home/ArifDev/DevDir/Project/TebakAngka/obj/Debug/net10.0/TebakAngka.genruntimeconfig.cache
+/home/ArifDev/DevDir/Project/TebakAngka/obj/Debug/net10.0/ref/TebakAngka.dll
