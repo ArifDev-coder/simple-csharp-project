@@ -82,13 +82,13 @@ class Program
                 Console.WriteLine("Ayo bang lanjut jangan menyerah!!");
                 currentMpvProcess = Process.Start(startInfo);
 
-                Thread.Sleep(60000);
             }
             else
             {
                 Console.WriteLine("Semangat jangan pantah menyerah!");
-                Thread.Sleep(60000);
             }
+
+            Thread.Sleep(60000);
         }
     }
 
