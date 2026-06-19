@@ -15,7 +15,7 @@ class Program
 
         string userName = Environment.UserName;
         string folderPath = $"/home/{userName}/Videos/MotivationVideos/";
-        string[] app = ["code", "arduino-ide"];
+        string[] app = ["ghostty", "arduino-ide"];
 
         Console.WriteLine("Cek jumlah Video yang dimiliki!");
 
@@ -48,27 +48,21 @@ class Program
 
         Console.WriteLine("Aplikasi berjalan di latar belakang...");
 
-        int[] lastVideosArePlayed = [];
+        List<int> currentPlayedVideo = new List<int>();
 
         while (true)
         {
-            int whatCurrentVideoArePlayed = 1;
-
-            if (lastVideosArePlayed.Length == amountOfVideos)
+            if (currentPlayedVideo.Count >= amountOfVideos)
             {
-                lastVideosArePlayed = [];
+                currentPlayedVideo.Clear();
             }
 
-            for (int i = 0; i < lastVideosArePlayed.Length; i++)
+            int whatCurrentVideoArePlayed;
+            do
             {
-                whatCurrentVideoArePlayed = random.Next(1, amountOfVideos);
-
-                if (whatCurrentVideoArePlayed != lastVideosArePlayed[i])
-                {
-                    lastVideosArePlayed.Append(whatCurrentVideoArePlayed);
-                    break;
-                }
+                whatCurrentVideoArePlayed = random.Next(1, amountOfVideos + 1);
             }
+            while (currentPlayedVideo.Contains(whatCurrentVideoArePlayed));
 
             bool isPlaying = currentMpvProcess != null && !currentMpvProcess.HasExited;
 
@@ -76,7 +70,9 @@ class Program
             {
                 Console.WriteLine($"Playing {whatCurrentVideoArePlayed}.mp4");
 
-                ProcessStartInfo startInfo = new ProcessStartInfo
+                currentPlayedVideo.Add(whatCurrentVideoArePlayed);
+
+                ProcessStartInfo startInfo = new()
                 {
                     FileName = "mpv",
                     Arguments = $"--fs \"{folderPath}{whatCurrentVideoArePlayed}.mp4\"",
@@ -98,22 +94,27 @@ class Program
 
     static bool IsAppOpen(string[] app)
     {
-        int amountOfAppsOpen = 0;
+        // int amountOfAppsOpen = 0;
 
-        for (int i = 0; i < app.Length; i++)
-        {
-            int process = Process.GetProcessesByName(app[i]).Length;
+        // for (int i = 0; i < app.Length; i++)
+        // {
+        //     int process = Process.GetProcessesByName(app[i]).Length;
 
-            amountOfAppsOpen += process;
-        }
+        //     amountOfAppsOpen += process;
+        // }
 
-        return amountOfAppsOpen > 0;
+        // return amountOfAppsOpen > 0;
+
+        // Simple Version
+        return app.Any(app => Process.GetProcessesByName(app).Length > 0);
     }
 
     static void CleanUp()
     {
         if (currentMpvProcess != null && !currentMpvProcess.HasExited)
         {
+            Console.WriteLine("\nClean Up Mpv Process...");
+
             currentMpvProcess.Kill();
             currentMpvProcess.Dispose();
         }
