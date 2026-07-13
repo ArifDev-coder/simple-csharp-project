@@ -1,4 +1,5 @@
 using System;
+using System.Net.Mail;
 using System.Text;
 
 namespace SimpleEncryption.Libs;
@@ -37,7 +38,7 @@ public class EncryptLibs
                 AsciiResult = ((atoi - offset + key) % 26) + offset;
                 txt.Append((char)AsciiResult);
             }
-            else if(char.IsUpper(ch))
+            else if (char.IsUpper(ch))
             {
                 int atoi = ch;
 
@@ -52,5 +53,11 @@ public class EncryptLibs
         }
 
         return txt.ToString();
+    }
+
+    public static string Decrypt(string msg, int key)
+    {
+
+        return msg;
     }
 }
